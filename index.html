@@ -4,17 +4,8 @@
     <meta charset="UTF-8">
     <title>Samar Tutorials - Google Sheets API</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json"
+    <link rel="manifest" href="manifest.json">
 </head>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-      console.log('Service Worker registered with scope:', registration.scope);
-    }).catch(function(error) {
-      console.log('Service Worker registration failed:', error);
-    });
-  }
-</script>
 <body>
     <div class="container">
         <h1>Samar Tutorials Data</h1>
@@ -60,6 +51,16 @@
                 }
             })
             .catch(error => console.error('Error fetching data:', error));
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
     </script>
 </body>
 </html>
