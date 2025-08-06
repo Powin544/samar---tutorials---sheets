@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Samar Tutorials - Google Sheets API</title>
-    <link rel="stylesheet" href="style.css"> <!-- LINK CSS HERE -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Google Sheets Data (API Key Method)</h1>
-    <table border="1" id="data-table">
-        <thead>
-            <tr><th>Name</th><th>Email</th><th>Phone</th><th>Remarks</th></tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="container">
+        <h1>Samar Tutorials Data</h1>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data from Google Sheets will load here -->
+            </tbody>
+        </table>
+    </div>
 
     <script>
-        const apiKey = 'AIzaSyC_meaviDUEyKadGRgwFRELWjvJ2rpFpm0';  // <-- Replace with your API Key
-        const sheetId = '1tpi4sKmb6q53KjuUa1ge39DHMPHxCWOYKu-cJX3w0d8'; // <-- Replace with your Sheet ID
-        const range = 'Sheet1!A2:D'; // Assuming headers in A1:D1
+        const apiKey = 'AIzaSyC_meaviDUEyKadGRgwFRELWjvJ2rpFpm0'; // <-- Your API Key
+        const sheetId = '1tpi4sKmb6q53KjuUa1ge39DHMPHxCWOYKu-cJX3w0d8'; // <-- Your Sheet ID
+        const range = 'Sheet1!A2:D'; // Range of data
 
         const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
 
